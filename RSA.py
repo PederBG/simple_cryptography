@@ -13,13 +13,13 @@ class RSA(Cipher):
     def encode(self, s, e, n):
         t = blocks_from_text(s, 2)  # deler meldingen s opp i blokker av bits representert ved int
         for elem in t:              # krypterer hver int blokk
-            elem = pow(elem, e, n)
+            pow(elem, e, n)
 
         return t
 
     def decode(self, c, d, n):
         for elem in c:
-            elem = pow(elem, d, n)
+            pow(elem, d, n)
 
         decoded = text_from_blocks(c, self.prime_bits)
         return decoded

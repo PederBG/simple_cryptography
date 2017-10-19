@@ -45,7 +45,11 @@ class Chat:
         print("Decoded back:", decoded)
         return encoded
 # -----------------------------------------------------------------------------------------
-
+"""s = Sender(Caesar())
+r = Receiver(Caesar())
+c = Chat(s, r)
+c.set_key(2)
+c.send_message("")"""
 
 def run():
     while True:
@@ -79,7 +83,7 @@ def run():
         print("----------------------------------------------")
         if hacker:
             print("Hacking the code...")
-            print("Using the decrypted message:", encoded)
+            print("Using the encoded message:", encoded)
             h = Hacker(ciphers[cip])
             hacked_result = h.hack(encoded)
             print("...")

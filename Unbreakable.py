@@ -10,7 +10,7 @@ class Unbreakable(Cipher):
     def encode(self, s, r, r2):
         encoded = ""
         i = 0
-        while True:
+        while True:  # filling in word again if message is longer than word
             if len(r) >= len(s):
                 break
             if i == len(r):
@@ -46,4 +46,4 @@ class Unbreakable(Cipher):
             legal_words.append(word.split("\n")[0])
             word = word_list.readline()
         word_list.close()
-        return [legal_words[random.randint(0, len(legal_words))], 0]
+        return [legal_words[random.randint(0, int(len(legal_words) / 100))], 0]
